@@ -254,15 +254,14 @@ const handlePlantsClick = (e) => {
         ...prevState,
         [cart.name]: true,
     })); 
- }
+ };
 
   const handleRemoveFromCart = (cart) => {
-    dispatch(addItem(cart));
     setAddedToCart((prevState) => ({
         ...prevState,
         [cart.name]: false,
     })); 
- }
+ };
     return (
         <div>
              <div className="navbar" style={styleObj}>
@@ -285,7 +284,24 @@ const handlePlantsClick = (e) => {
         </div>
         {!showCart? ( 
         <div className="product-grid">
-           
+            {plantsArray.map((category, index) => (
+                <div key={index} className={category}>
+                    <h1><div>{category.category}</div></h1>
+                    <div className="product-list">
+                        {category.plants.map((plant, plantIndex) => (
+                        <div className="product-card" key={plantIndex}>
+                            <img className="product-image" src={plant.image} alt={plant.name} />
+                            <div className="product-title">{plant.name}</div>
+                            <div className="product-cost">{plant.cost}</div>
+                            <div className="product-description">{plant.description}</div>
+                            
+                            <button  className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
+                        </div>
+                        ))}
+                    </div>
+                </div>
+            ))}
+{/*            
                 {plantsArray.map((category, index) => (
                     <div key={index} className={category}>
                         <h1>{cateogry}</h1>
@@ -301,7 +317,7 @@ const handlePlantsClick = (e) => {
                         ))}
                         </div>
                     </div>
-                ) )}
+                ))} */}
             
         </div>
  ) :  (
@@ -312,3 +328,4 @@ const handlePlantsClick = (e) => {
 }
 
 export default ProductList;
+
