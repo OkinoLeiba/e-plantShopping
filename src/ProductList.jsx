@@ -257,6 +257,7 @@ const handlePlantsClick = (e) => {
  };
 
   const handleRemoveFromCart = (cart) => {
+    dispatch(removeItem(cart));
     setAddedToCart((prevState) => ({
         ...prevState,
         [cart.name]: false,
