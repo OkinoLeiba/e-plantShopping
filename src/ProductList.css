@@ -97,6 +97,10 @@ body {
     height: 200px; /* Adjust height for better consistency */
 }
 
+.product-description {
+    overflow-wrap: break-word;
+}
+
 .product-button {
     background-color: #e74c3c;
     color: #fff;
