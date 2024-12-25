@@ -6,6 +6,7 @@ function ProductList() {
     const [showCart, setShowCart] = useState(false); 
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({});
+    // const dispatch = useDispatch();
     const plantsArray = [
         {
             category: "Air Purifying Plants",
@@ -254,6 +255,7 @@ const handlePlantsClick = (e) => {
         ...prevState,
         [cart.name]: true,
     })); 
+    // alert("Item Added to Cart");
  };
 
   const handleRemoveFromCart = (cart) => {
@@ -313,7 +315,7 @@ const handlePlantsClick = (e) => {
                                 <img className='product-image' src={plant.image} alt={plant.name} />
                                 <p>{plant.cost}</p>
                                 <p>{plant.decription}</p>
-                                <button className='product-button' onClick={() => handleCartClick(plant)}>Add to Cart</button>
+                                <button className='product-button' onClick={() => handleAddToCart(plant)}>Add to Cart</button>
                             </div>
                         ))}
                         </div>
