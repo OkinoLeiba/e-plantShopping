@@ -286,7 +286,10 @@ const handlePlantsClick = (e) => {
              <div className="navbar" style={styleObj}>
             <div className="tag">
                <div className="luxury">
-               <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
+                    <div className='checkout'>
+                        <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
+                        <div>{totalQuantity}</div>
+                    </div>
                <a href="/" style={{textDecoration:'none'}}>
                         <div>
                     <h3 style={{color:'white'}}>Paradise Nursery</h3>
