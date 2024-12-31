@@ -4,7 +4,7 @@ import './ProductList.css'
 import CartItem from './CartItem';
 import { addItem, removeItem, updateQuantity } from './CartSlice';
 function ProductList() {
-    dispatch = useDispatch();
+    const dispatch = useDispatch();
     const [showCart, setShowCart] = useState(false); 
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({});
@@ -271,7 +271,7 @@ const handlePlantsClick = (e) => {
         ...prevState,
         [cart.name]: true,
     })); 
-    alert("Item Added to Cart");
+    // alert("Item Added to Cart");
  };
 
   const handleRemoveFromCart = (cart) => {
