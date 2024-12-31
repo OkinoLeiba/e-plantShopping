@@ -164,6 +164,11 @@ body {
     width: 650px;
     font-size: 19px;
 }
+.checkout {
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
 .cart{
     color: white;
     display: flex;
