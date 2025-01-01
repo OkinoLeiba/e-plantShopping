@@ -6,7 +6,7 @@ export default defineConfig({
   base: "/e-plantShopping",
   plugins: [react()],
   build: {
-    outDir: "./dist",
+    outDir: "./build",
     emptyOutDir: true
   }
 })
