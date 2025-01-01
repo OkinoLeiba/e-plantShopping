@@ -11,7 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://okinoleiba.github.io/e-plantShopping/",
+  "homepage": "https://okinoleiba.github.io/e-plantShopping",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
     "react": "^18.2.0",
