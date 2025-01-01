@@ -10,11 +10,12 @@ function ProductList() {
     const [addedToCart, setAddedToCart] = useState({});
     const cartItems = useSelector((state) => state.cart.items);
 
-    const totalQuantity = useSelector((state) => state.cart.totalQuantity); // Retrieve the total quantity
+    const totalQuantity = useSelector((state) => state.cart.items.length); // Retrieve the total quantity
 
     const handleAddCart = (cart) => {
         // Dispatch the plant information to the Redux slice
         dispatch(addItem(cart));
+        // dispatch(updateQuantity(cart));
 
         // Update the addedToCart state to reflect the plant has been added
         setAddedToCart((prevState) => ({
@@ -266,7 +267,8 @@ const handlePlantsClick = (e) => {
   };
 
  const handleAddToCart = (cart) => {
-    dispatch(addItem(cart));
+     dispatch(addItem(cart));
+    //  dispatch(updateQuantity(cart));
     setAddedToCart((prevState) => ({
         ...prevState,
         [cart.name]: true,
@@ -275,7 +277,8 @@ const handlePlantsClick = (e) => {
  };
 
   const handleRemoveFromCart = (cart) => {
-    dispatch(removeItem(cart));
+      dispatch(removeItem(cart));
+    //   dispatch(updateQuantity(cart));
     setAddedToCart((prevState) => ({
         ...prevState,
         [cart.name]: false,
